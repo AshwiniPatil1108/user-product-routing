@@ -1,0 +1,14 @@
+<ng-container>
+    <p>
+        The User Name <strong>{{userInfo.userName}}</strong> 
+        with Id <strong>{{userInfo.userId}}</strong>
+    </p>
+    <hr>
+    <button
+    (click)="onEdit()"
+    routerLink="edit"
+    mat-raised-button color="primary">Edit User</button>
+    <button class="ml-3"
+    (click)="onRemove()"
+    mat-raised-button color="warn">Remove User</button>
+</ng-container>

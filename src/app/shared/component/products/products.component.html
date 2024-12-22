@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-lg-12 mb-4 text-right">
+        <button 
+        routerLink="addProduct"
+        class="btn-sm btn-outline-info">
+            Add Product
+        </button>
+    </div>
+    <div class="col-lg-4">
+        <ul class="list-group">
+            <li 
+            [ngClass]="{
+                active : prod.pid === selectedProdId
+            }"
+            [routerLink]="prod.pid"
+            (click)="onProductClick(prod)"
+            *ngFor="let prod of producttInfo"
+            class="list-group-item">
+                {{prod.pname}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

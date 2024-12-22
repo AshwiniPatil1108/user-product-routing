@@ -1,0 +1,30 @@
+<div class="row mb-4">
+    <div class="col text-right">
+        <button
+        routerLink="addUser"
+        class="btn-sm btn-outline-info">
+            Add User
+        </button>
+    </div>
+    .
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li 
+            [ngClass]="{
+                active :selectedUserId === user.userId
+            }"
+            (click)="onUserSelect(user)"
+            [routerLink]="[user.userId]"
+            [queryParams]="{userRole : user.userRole}"
+            *ngFor="let user of userInfo"
+            class="list-group-item">
+            {{user.userName}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>
